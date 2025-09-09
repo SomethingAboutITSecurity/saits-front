@@ -1,6 +1,6 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "../Button/styles";
-import { animateScroll as scroll } from "react-scroll";
+// ...existing code...
 import { sweetalert } from "../../common/functions/sweetalert.js";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import EmailValidator from "email-validator";
@@ -29,10 +29,6 @@ import { API_URL, HCAPTCHA_KEY } from "../../common/config";
 function ContactSection() {
   const [token, setToken] = useState(null);
   const captchaRef = useRef(null);
-  const [hover, setHover] = useState(false);
-  const onHover = () => {
-    setHover(!hover);
-  };
 
   const [values, setValues] = useState({
     email: "",
@@ -46,10 +42,6 @@ function ContactSection() {
     };
   };
 
-  const toogleFooter = () => {
-    // eslint-disable-next-line no-restricted-globals
-    scroll.scrollToBottom();
-  };
 
   const sendFormData = async () => {
     await fetch(`${API_URL}/saits/contact`, {
@@ -146,20 +138,15 @@ function ContactSection() {
           </MapContainer>{" "}
         </LocalizationContainer>
       </ContactSectionWrapper>
-      <ArrowDown
-        aria-label="Przejdź do stopki strony"
-        onClick={toogleFooter}
-        onMouseEnter={onHover}
-        onMouseLeave={onHover}
-        smooth={true}
-        duration={500}
-        offset={-80}
-        spy={true}
-        exact="true"
-        style={{ margin: "100px auto 0 auto" }}
-      >
-        <ArrowDownIcon />
-      </ArrowDown>
+        <ArrowDown
+          onClick={() => {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+          }}
+          aria-label="Przewiń w dół do stopki"
+          style={{ margin: "100px auto 0 auto" }}
+        >
+          <ArrowDownIcon />
+        </ArrowDown>
     </ContactSectionContainer>
   );
 }

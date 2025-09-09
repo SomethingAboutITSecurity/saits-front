@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { Link } from "react-scroll";
+// ...existing code...
 import { colors } from "../constants";
 
-export const Button = styled(Link)`
+export const Button = styled.button`
   box-sizing: border-box;
   height: 3rem;
   border-radius: 2rem;

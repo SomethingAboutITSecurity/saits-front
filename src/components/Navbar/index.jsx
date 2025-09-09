@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaBars } from "react-icons/fa";
-import { animateScroll as scroll } from "react-scroll";
+// ...existing code...
 import {
   Nav,
   NavbarContainer,
@@ -42,13 +42,13 @@ const Navbar = ({ toggle }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", changeNav);
+  window.addEventListener("scroll", changeNav);
 
-    return () => window.removeEventListener("scroll");
+  return () => window.removeEventListener("scroll", changeNav);
   }, []);
 
   const toggleHome = () => {
-    scroll.scrollToTop();
+  window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -64,12 +64,12 @@ const Navbar = ({ toggle }) => {
           {navbarItems.map((item) => (
             <NavItem key={item.href}>
               <NavLinks
-                to={item.href}
-                smooth={true}
-                duration={500}
-                spy={true}
-                exact="true"
-                offset={-80}
+                href={`#${item.href}`}
+                onClick={e => {
+                  e.preventDefault();
+                  const el = document.getElementById(item.href);
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
                 aria-label={`Przejdź do sekcji ${item.text}`}
               >
                 {item.text}

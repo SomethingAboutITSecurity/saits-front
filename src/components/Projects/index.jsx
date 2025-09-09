@@ -11,8 +11,6 @@ import {
 import { ArrowDown } from "../ArrowButtons/ArrowDown";
 import { AiOutlineArrowDown as ArrowDownIcon } from "react-icons/ai";
 
-import Tilt from "react-tilt";
-
 const projectsData = [
   {
     onClick: () => window.open("https://www.saferinternet.pl/dbi/o-dbi.html"),
@@ -43,7 +41,6 @@ const Projects = () => {
       <ProjectsH1>Działalność</ProjectsH1>
       <ProjectsWrapper>
         {projectsData.map((item) => (
-          <Tilt className="Tilt" options={{ max: 10, scale: 1.05 }}>
             <ProjectsCard
               key={item.header}
               onClick={item.onClick}
@@ -55,17 +52,14 @@ const Projects = () => {
               <ProjectsH2>{item.header}</ProjectsH2>
               <ProjectsP>{item.description}</ProjectsP>
             </ProjectsCard>
-          </Tilt>
         ))}
       </ProjectsWrapper>
       <ArrowDown
-        to="contact"
-        smooth={true}
-        duration={500}
-        offset={-80}
-        spy={true}
-        exact="true"
-        aria-label="Przewiń w dół do następnej sekcji"
+        onClick={() => {
+          const el = document.getElementById("contact");
+          if (el) el.scrollIntoView({ behavior: "smooth" });
+        }}
+        aria-label="Przewiń w dół do sekcji kontakt"
       >
         <ArrowDownIcon />
       </ArrowDown>

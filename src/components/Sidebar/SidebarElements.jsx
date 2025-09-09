@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { Link as LinkR } from 'react-router-dom'
-import { Link as LinkS } from 'react-scroll'
 import {FaTimes} from 'react-icons/fa'
 import {colors} from "../constants"
 
@@ -45,24 +44,7 @@ text-align: center;
 
 `
 
-export const SidebarLink = styled(LinkS)`
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 2rem;
-text-decoration: none;
-list-style: none;
-transition: 0.2s ease-in-out;
-text-decoration: none;
-font-weight: bold;
-color: ${colors.white};
-cursor: pointer;
 
-&:hover{
-    color: ${colors.green};
-    transition: 0.2s ease-in-out;
-}
-`
 
 export const SideBtnWrap = styled.div`
 display: flex;

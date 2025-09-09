@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import {Link} from 'react-scroll'
+// ...existing code...
 import {colors} from "../constants"
 
-export const ArrowDown = styled(Link)`
+export const ArrowDown = styled.button`
 border-radius: 50%;
 background: ${colors.green};
 white-space: nowrap;

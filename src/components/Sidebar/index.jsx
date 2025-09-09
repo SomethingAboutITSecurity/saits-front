@@ -5,7 +5,7 @@ import {
   CloseIcon,
   SidebarWrapper,
   SidebarMenu,
-  SidebarLink,
+    SidebarRoute,
 } from "./SidebarElements";
 
 const Sidebar = ({ isOpen, toggle }) => {
@@ -22,50 +22,18 @@ const Sidebar = ({ isOpen, toggle }) => {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu role="menu">
-          <SidebarLink
-            to="about"
-            spy={true}
-            exact="true"
-            offset={-80}
-            onClick={toggle}
-            role="menuitem"
-            aria-label="Przejdź do sekcji O nas"
-          >
+          <SidebarRoute to="/about" onClick={toggle}>
             O nas
-          </SidebarLink>
-          <SidebarLink
-            to="conference"
-            spy={true}
-            exact="true"
-            offset={-80}
-            onClick={toggle}
-            role="menuitem"
-            aria-label="Przejdź do sekcji Konferencja"
-          >
+          </SidebarRoute>
+          <SidebarRoute to="/conference" onClick={toggle} aria-label="Przejdź do sekcji Konferencja">
             Konferencja
-          </SidebarLink>
-          <SidebarLink
-            to="projects"
-            spy={true}
-            exact="true"
-            offset={-80}
-            onClick={toggle}
-            role="menuitem"
-            aria-label="Przejdź do sekcji Działalność"
-          >
+          </SidebarRoute>
+          <SidebarRoute to="/projects" onClick={toggle} aria-label="Przejdź do sekcji Działalność">
             Działalność
-          </SidebarLink>
-          <SidebarLink
-            to="contact"
-            spy={true}
-            exact="true"
-            offset={-80}
-            onClick={toggle}
-            role="menuitem"
-            aria-label="Przejdź do sekcji Kontakt"
-          >
+          </SidebarRoute>
+          <SidebarRoute to="/contact" onClick={toggle} aria-label="Przejdź do sekcji Kontakt">
             Kontakt
-          </SidebarLink>
+          </SidebarRoute>
         </SidebarMenu>
       </SidebarWrapper>
     </SidebarContainer>
