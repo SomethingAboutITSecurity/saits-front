@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // --- kolory / tokeny ---
 const brand = {
-  green: "#16a34a",
+  green: "#2abe1dff",
   greenGlow: "rgba(22,163,74,.25)",
   bg1: "#0b1020",      // tło bazowe (dark)
   bg2: "#0e1630",      // gradient
@@ -31,25 +31,21 @@ export const Background = styled.div`
     }
 `;
 
+export const Logo = styled.img`
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 12px 0 24px 12px; /* odstęp od górnej i lewej krawędzi */
+    cursor: pointer;
+`;
 
 export const Page = styled.main`
-    // max-width: 960px;
-    // margin: 0 auto;
-    // padding: 24px clamp(16px, 4vw, 32px);
     max-width: 960px;
     margin: 0 auto;
     padding: 28px clamp(16px, 4vw, 36px) 56px;
 `;
 
 export const Card = styled.section`
-    // background: #fff;
-    // border-radius: 18px;
-    // box-shadow: 0 8px 28px rgba(0,0,0,.08);
-    // padding: clamp(18px, 3.5vw, 28px);
-    // @media (prefers-color-scheme: dark) {
-    //     background: #111;
-    //     box-shadow: 0 10px 30px rgba(0,0,0,.5);
-    // }
     background: rgba(255,255,255,.76);
     backdrop-filter: blur(6px);
     border-radius: ${radii.card};
@@ -66,6 +62,7 @@ export const Card = styled.section`
 export const H1 = styled.h1`
     font-size: clamp(1.5rem, 3.5vw, 2.2rem);
     margin: 0 0 6px;
+    color: ${brand.green};
     letter-spacing:.2px; font-weight: 800;
 `;
 
@@ -85,6 +82,11 @@ export const Section = styled.div`
 export const Question = styled.h2`
     font-size: clamp(1.05rem, 2.4vw, 1.25rem);
     margin: 0 0 10px;
+    color: #fff;
+    border-bottom: 1px solid;
+    border-color: ${brand.green};
+    border-radius: 4px;
+    padding-bottom: 6px;
 `;
 
 export const Divider = styled.hr`
@@ -110,7 +112,6 @@ export const Chip = styled.label`
     position: relative;
     display: inline-flex; align-items: center; gap: 8px;
     padding: 10px 14px;
-    // border-radius: 999px;
     border-radius: ${radii.pill};
     border: 1px solid #dcdcdc;
     cursor: pointer; user-select: none; font-weight: 600;
@@ -122,8 +123,6 @@ export const Chip = styled.label`
     input { position: absolute; opacity: 0; pointer-events: none; }
     &:hover{ transform: translateY(-1px); }
     &:has(input:checked){
-        // background: #18500dff; color: #fff; border-color: #06290dff;
-        // box-shadow: 0 8px 18px rgba(12, 53, 8, 0.25);
         border-color: ${brand.green};
         box-shadow: 0 8px 18px ${brand.greenGlow};
     }
@@ -153,10 +152,8 @@ export const Text = styled.textarea`
 
 export const Button = styled.button`
     margin-top: 6px;
-    // background: #18500dff; color: #fff; border: 0; border-radius: 14px;
     background:${brand.green}; color:#fff; border:0; border-radius:14px;
     padding: 12px 18px; font-weight: 800; cursor: pointer;
-    // box-shadow: 0 10px 22px rgba(12, 53, 8, 0.25);
     box-shadow:0 10px 22px ${brand.greenGlow};
     transition: transform .06s ease;
     &:hover{ transform: translateY(-1px); }

@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
 import Swal from "sweetalert2";
 import {
-    Background, Page, Card, H1, Lead, Section, Question, Divider, Chips, Chip, Grid, Button, Note, Error, Socials, SocialLink
+    Background, Logo, Page, Card, H1, Lead, Section, Question, Divider, Chips, Chip, Grid, Button, Note, Error, Socials, SocialLink
 } from "./styles";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-
+import logo from "./assets/logo.png";
 
 // dane formularza
 const init = {
@@ -96,6 +96,8 @@ export default function Fr4m3() {
 
     return (
         <Page>
+            <Logo src={logo} alt="SAITS logo" />
+
             {/* SEKCJA OPISU PROJEKTU (góra) */}
             <Card style={{ marginBottom: 16 }}>
                 <H1>FR4M3 — opis projektu</H1>
@@ -123,7 +125,7 @@ Dziękujemy za Twój czas i wkład w nasze badania!
                 {/* 1. Płeć */}
                 <span ref={errAnchors.gender} />
                 <Section aria-invalid={!!errors.gender}>
-                    <Question>1. Płeć *</Question>
+                    <Question>1. Płeć</Question>
                     <Chips role="radiogroup" aria-label="Płeć">
                         {["K", "M"].map((opt) => (
                         <Chip key={opt}>
@@ -144,7 +146,7 @@ Dziękujemy za Twój czas i wkład w nasze badania!
                 {/* 2. Wiek */}
                 <span ref={errAnchors.age} />
                 <Section aria-invalid={!!errors.age}>
-                    <Question>2. Wiek *</Question>
+                    <Question>2. Wiek</Question>
                     <Chips role="radiogroup" aria-label="Wiek">
                     {["<18", "18–24", "25–34", "35–44", "45+"].map((opt) => (
                         <Chip key={opt}>
@@ -165,7 +167,7 @@ Dziękujemy za Twój czas i wkład w nasze badania!
                 {/* 3. Kim jesteś? */}
                 <span ref={errAnchors.who} />
                 <Section aria-invalid={!!errors.who}>
-                    <Question>3. Kim jesteś? *</Question>
+                    <Question>3. Kim jesteś?</Question>
                     <Chips role="radiogroup" aria-label="Kim jesteś">
                     {["Student", "Pracownik Uczelni", "Przypadkowy przechodzień"].map((opt) => (
                         <Chip key={opt}>
@@ -186,7 +188,7 @@ Dziękujemy za Twój czas i wkład w nasze badania!
                 {/* 4. Wydział */}
                 <span ref={errAnchors.faculty} />
                 <Section aria-invalid={!!errors.faculty}>
-                    <Question>4. Do jakiego wydziału należysz? *</Question>
+                    <Question>4. Do jakiego wydziału należysz?</Question>
                     <Grid aria-label="Wydziały">
                     {faculties.map((opt) => (
                         <Chip key={opt}>
@@ -207,7 +209,7 @@ Dziękujemy za Twój czas i wkład w nasze badania!
                 {/* 5. Dziedzina pracy */}
                 <span ref={errAnchors.field} />
                 <Section aria-invalid={!!errors.field}>
-                    <Question>5. W jakiej dziedzinie pracujesz? *</Question>
+                    <Question>5. W jakiej dziedzinie pracujesz?</Question>
                     <Grid aria-label="Dziedziny">
                     {fields.map((opt) => (
                         <Chip key={opt}>
@@ -243,7 +245,6 @@ Dziękujemy za Twój czas i wkład w nasze badania!
                     <Button type="submit" disabled={loading}>
                     {loading ? "Wysyłanie…" : "Wyślij"}
                     </Button>
-                    <Note>* Wszystkie pytania powyżej są wymagane.</Note>
                 </Section>
                 </Card>
             </form>
