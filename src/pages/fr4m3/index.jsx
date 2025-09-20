@@ -6,7 +6,6 @@ import {
 } from "./styles";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import logo from "./assets/logo.png";
-import jeden from "./assets/1.svg";
 
 // dane formularza
 const init = {

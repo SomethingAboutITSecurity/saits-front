@@ -39,15 +39,6 @@ export const Logo = styled.img`
     cursor: pointer;
 `;
 
-// ilustracja 1 svg
-export const Jeden = styled.img`
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 24px;
-    cursor: pointer;
-`;
-
 export const Page = styled.main`
     max-width: 960px;
     margin: 0 auto;
