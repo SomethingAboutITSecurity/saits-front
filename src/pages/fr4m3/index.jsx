@@ -1,10 +1,12 @@
 import React, { useRef, useState } from "react";
 import Swal from "sweetalert2";
 import {
-    Background, Logo, Page, Card, H1, Lead, Section, Question, Divider, Chips, Chip, Grid, Button, Note, Error, Socials, SocialLink
+    Background, Logo, Page, Card, H1, Lead, Section, Question, Divider, Chips, Chip, Grid, Button, Note, Error, Socials, SocialLink,
+    Jeden
 } from "./styles";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import logo from "./assets/logo.png";
+import jeden from "./assets/1.svg";
 
 // dane formularza
 const init = {
@@ -97,6 +99,8 @@ export default function Fr4m3() {
     return (
         <Page>
             <Logo src={logo} alt="SAITS logo" />
+            {/* <Jeden src={jeden} alt="1" />    */}
+
 
             {/* SEKCJA OPISU PROJEKTU (góra) */}
             <Card style={{ marginBottom: 16 }}>
